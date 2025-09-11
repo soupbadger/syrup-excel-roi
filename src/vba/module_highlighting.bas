@@ -15,12 +15,22 @@ Sub HighlightRowDynamic()
     
     ' Store the currently selected column
     selCol = ActiveCell.Column
+    
+    ' Current shape
+    Set shp = ActiveSheet.Shapes(Application.Caller)
+    
+    ' Clear previous shape highlight if it's different from current shape
+    If Not prevShape Is Nothing And Not prevShape Is shp Then
+        On Error Resume Next
+        prevShape.Fill.Transparency = 1
+        prevShape.Fill.ForeColor.RGB = RGB(255, 255, 255)
+        On Error GoTo 0
+    End If
         
     ' Clear previous highlights
     Call ClearAllHighlights
     
-    ' Current shape
-    Set shp = ActiveSheet.Shapes(Application.Caller)
+    ' Highlight current shape
     shp.Fill.Transparency = 0.6
     shp.Fill.ForeColor.RGB = RGB(253, 191, 86)
     Set prevShape = shp
@@ -48,8 +58,19 @@ Sub HighlightRowDynamic()
     ' Store parcel for clearing next time
     prevParcel = parcelNum
     
-    ' After highlighting the row via shape
-    Cells(rowNum, selCol).Select
+    ' After highlighting the row via shape (ensure we stay within bounds)
+    Dim targetCol As Long
+    targetCol = selCol
+    
+    ' Make sure target column is within the data range
+    If targetCol > lastCol Then targetCol = 1
+    
+    ' Only select if the target cell has data or is in column A
+    If targetCol = 1 Or Not IsEmpty(Cells(rowNum, targetCol)) Then
+        Cells(rowNum, targetCol).Select
+    Else
+        Cells(rowNum, 1).Select  ' Default to column A if target is empty
+    End If
     
 
     Application.EnableEvents = True
@@ -66,13 +87,6 @@ Sub ClearAllHighlights()
         Range(Cells(r, 1), Cells(r, lastCol)).Interior.ColorIndex = xlNone
     Next r
     
-    ' Reset previous shape
-    If Not prevShape Is Nothing Then
-        On Error Resume Next
-        prevShape.Fill.Transparency = 1
-        prevShape.Fill.ForeColor.RGB = RGB(255, 255, 255)
-        On Error GoTo 0
-        Set prevShape = Nothing
-    End If
+    ' Reset previous shape (but don't set to Nothing here since we handle it in HighlightRowDynamic)
+    ' The shape clearing is now handled in HighlightRowDynamic before calling this sub
 End Sub
-
