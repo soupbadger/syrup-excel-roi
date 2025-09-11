@@ -36,15 +36,15 @@ Some parts may be experimental or imperfect, but the goal was to **practice prob
 ## Screenshots & Demo
 
 ### Excel Table Fresh/Unselected
-![Excel Table Highlight](images/unselected.png)
+![Excel Table Fresh](images/unselected.png)
 
-### Parcel Map Integration
-![Parcel Map](images/map_select.png)
+### Interactive Map Selection
+![Map Selection](images/map_select.png)
 
 ### Interactive Row Selection
-![Row Selection Demo](images/row_select.png)
+![Row Selection](images/row_select.png)
 
-### Full Workflow (GIF)
+### Demo (GIF)
 ![Workflow Demo](gifs/demo.gif)
 
 ---
