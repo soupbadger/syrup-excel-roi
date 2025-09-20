@@ -1,72 +1,60 @@
-# Neighborhood Property Value Tracker
+# Interactive Real Estate Investment Tracker for Local Markets
 
---- 
-
-
-An **Excel** and **Python** project visualizes property values in the fictional neighborhood Syrup Hollow and tracks changes over time.  
-Clicking parcels on the map highlights the corresponding row in the data table, and selecting a row highlights its parcel on the map.
-
---- 
-
-
-
-## Features
-- Dynamic row highlighting in Excel based on map clicks or table selection  
-- Visual linking between map parcels and table data  
-- Tracks last sale date, most recent sale, market appraisal, and potential ROI  
-- Built-in macros (VBA) for interactivity  
-- Python script for scraping & preparing property data  
-
---- 
-
-
-## Project Background
-
-This project was developed as a **learning exercise** to practice:  
-- Excel VBA for dynamic interactivity  
-- Python for data scraping and preprocessing  
-- Structuring a project for maintainability and clarity  
-
-The focus was on understanding workflows, debugging, and connecting Excel tables with map visuals.  
-Some parts may be experimental or imperfect, but the goal was to practice problem-solving and improve coding skills.
-
-
---- 
-
-## Notes
-- All personal and sensitive information has been anonymized  
-- Parcel numbers are randomized between **1–21**  
-- Owner names, street names, and sale dates are **fake for privacy**  
-- A real map is included for visualization, but no resident-identifying data is exposed  
+An **Excel** and **Python** project that delivers a dynamic dashboard for visualizing and analyzing property values in a target neighborhood. The tool solves a key problem for real estate investors by interactively linking map parcels to a corresponding data table, allowing for rapid analysis and decision-making.
 
 ---
 
+## The Business Problem
 
-## Screenshots & Demo GIF
+A local real estate investor needs an intuitive, visual tool to track properties in a target neighborhood like "Syrup Hollow." They require a single dashboard to monitor key investment metrics—last sale date, current market appraisal, and potential ROI—and to quickly visualize the relationship between properties on a map and their underlying financial data.
 
-### Excel Table Fresh/Unselected
-![Excel Table Fresh](images/unselected.png)
+---
+
+## The Solution: An Interactive Investment Dashboard
+
+This project delivers a fully interactive Excel dashboard that directly solves this problem. By dynamically linking map parcels to a data table using VBA macros, an investor can instantly identify and analyze properties of interest. The tool centralizes critical data, saving hours of manual cross-referencing between maps and spreadsheets and enabling faster, more informed investment decisions.
+
+---
+
+## Live Demo
 
 ### Interactive Map Selection
+Clicking a parcel on the map instantly highlights the corresponding row in the data table.
 ![Map Selection](images/map_select.png)
 
 ### Interactive Row Selection
+Conversely, selecting a row in the table highlights its parcel on the map.
 ![Row Selection](images/row_select.png)
 
-### Demo (GIF)
+### Full Workflow (GIF)
 ![Workflow Demo](gifs/demo.gif)
 
 ---
 
+## Key Features & Technologies
+
+* **Dynamic Highlighting:** Uses **Excel VBA** macros for two-way interactivity between the map and the data table.
+* **Visual Data Linking:** Creates a clear, intuitive connection between geographic parcels and their associated financial data.
+* **Comprehensive Metrics:** Tracks last sale date, most recent sale price, current market appraisal, and calculates potential ROI.
+* **Automated Data Prep:** A **Python** script is used for the initial scraping and preparation of the property data.
+
+---
+
+## Data & Anonymization Notes
+
+* All personal and sensitive information in this public-facing project has been anonymized.
+* Parcel numbers are randomized between **1–21**.
+* Owner names, street names, and sale dates are **fictional to protect privacy**.
+* A real map is included for visualization, but no resident-identifying data is exposed.
+
+---
 
 ## Acknowledgements
 
 Assistance with coding, Excel formulas, and Python scripting was obtained from AI tools including:
 
-- **ChatGPT (GPT-5-mini)**
-- **Gemini (2.5 Flash)**
-- **Claude (Sonnet 4)** — provided the most accurate and complete guidance
- 
+-   **ChatGPT (GPT-5-mini)**
+-   **Gemini (2.5 Flash)**
+-   **Claude (Sonnet 4)** — provided the most accurate and complete guidance
 
-All code was actively developed and refined with human oversight — issues were identified and corrected during the process.  
-
+All code was actively developed and refined with human oversight — issues were identified and corrected during the process.
